@@ -1,5 +1,7 @@
 ## Class Diagram
 
+@startuml
+
 class Cinema {
     - name: String
     - address: String
@@ -72,3 +74,15 @@ enum ScreeningType {
     VIP
     THREE_D
 }
+
+Cinema "1" -- "*" CinemaHall
+Cinema "1" -- "*" Screening
+Screening "*" -- "1" Movie
+Screening "*" -- "1" CinemaHall
+Screening "1" -- "*" Ticket
+Screening "1" -- "*" Reservation
+CinemaHall "1" -- "*" Seat
+Customer "1" -- "*" Ticket
+Customer "1" -- "*" Reservation
+
+@enduml
