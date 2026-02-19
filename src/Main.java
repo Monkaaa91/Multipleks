@@ -10,26 +10,26 @@ import java.time.LocalDateTime;
 
         Movie movie1 = new Movie("The Best Movie", 90, "This Movie is the best");
 
-        Screaning screaning1 = new Screaning(
+        Screening screening1 = new Screening(
                 movie1,
                 hall1,
                 LocalDateTime.now().plusDays(1),
-                ScreaningType.VIP
+                ScreeningType.VIP
         );
 
-        cinema1.addScreaning(screaning1);
+        cinema1.addScreening(screening1);
 
         cinema1.printProgramme();
         Customer customer = new Customer("Monika", "monika@gmail.com");
 
         String[] seats = {"S1", "S2", "S3"};
-        screaning1.reservePlaces(customer, seats);
+        screening1.reservePlaces(customer, seats);
 
 
 
-        screaning1.buyTicket("S3", customer);
+        screening1.buyTicket("S3", customer);
 
-        System.out.println("Available seats: " + screaning1.getAvailableSeats().size());
+        System.out.println("Available seats: " + screening1.getAvailableSeats().size());
     }
 
 

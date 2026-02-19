@@ -2,16 +2,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Screaning {
+public class Screening {
 
     private final Movie movie;
     private final CinemaHall hall;
     private final LocalDateTime dateTime;
-    private final ScreaningType type;
+    private final ScreeningType type;
     private final List<Ticket> tickets = new ArrayList<>();
     private final List<Reservation> reservations = new ArrayList<>();
 
-    public Screaning(Movie movie, CinemaHall hall, LocalDateTime dateTime, ScreaningType type) {
+    public Screening(Movie movie, CinemaHall hall, LocalDateTime dateTime, ScreeningType type) {
         this.movie = movie;
         this.hall = hall;
         this.dateTime = dateTime;
