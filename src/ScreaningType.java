@@ -1,4 +1,4 @@
-public enum ScreeningType {
+public enum ScreaningType {
         STANDARD,
         VIP,
         THREE_D

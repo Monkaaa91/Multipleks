@@ -10,7 +10,7 @@ public class CinemaHall {
         this.seats = new ArrayList<>();
 
         for (int r = 0; r < rows; r++) {
-            char rowLetter = (char) ('A' + r);
+            char rowLetter = (char) ('S' + r);
 
             for (int i = 1; i <= seatsPerRow; i++) {
                 seats.add(new Seat(rowLetter + "" + i));

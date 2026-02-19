@@ -14,5 +14,9 @@ public class Customer {
     public void addTicket(Ticket ticket) {
         tickets.add(ticket);
     }
+    @Override
+    public String toString() {
+        return name + " (" + email + ")";
+    }
 
 }

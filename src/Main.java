@@ -1,13 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.time.LocalDateTime;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+
+    public static void main(String[] args) {
+
+        Cinema cinema1 = new Cinema("The Best Cinema", "ul. Akacjowa 22");
+
+        CinemaHall hall1 = new CinemaHall("Sala 1", 7, 12);
+        cinema1.addHall(hall1);
+
+        Movie movie1 = new Movie("The Best Movie", 90, "This Movie is the best");
+
+        Screaning screaning1 = new Screaning(
+                movie1,
+                hall1,
+                LocalDateTime.now().plusDays(1),
+                ScreaningType.VIP
+        );
+
+        cinema1.addScreaning(screaning1);
+
+        cinema1.printProgramme();
+        Customer customer = new Customer("Monika", "monika@gmail.com");
+
+        String[] seats = {"S1", "S2", "S3"};
+        screaning1.reservePlaces(customer, seats);
+
+
+
+        screaning1.buyTicket("S3", customer);
+
+        System.out.println("Available seats: " + screaning1.getAvailableSeats().size());
     }
-}
+
+
